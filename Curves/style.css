@@ -1,0 +1,171 @@
+/* *Fonts* */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato&display=swap');
+:root{
+    --f1-: 'Lato', sans-serif;
+    --f2-: 'Bebas Neue', cursive;
+    --bl-:#3c31dd;
+    --red-:#dd3f31;
+    --pi-:#da53a6;
+    --dark-:#0f0f10;
+    --n-:#202731;
+}
+h1{
+    z-index: 2;
+    font-family: var(--f2-);
+}
+p{
+    z-index: 2;
+    font-family: var(--f1-);
+}
+/* *CSS reset* */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    color: white;
+    background:#202731;
+    overflow-x: hidden;
+}
+section{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 400px;
+    padding: 100px 20vw;
+}
+
+.blue{
+    background: var(--bl-);
+}
+.red{
+    background: var(--red-);
+}
+.pink{
+    background: var(--pi-) ;
+}
+.dark{
+    background: var(--dark-) ;
+}
+
+.curve{
+    position: absolute;
+    height: 225px;
+    width: 100%;
+    bottom: 0;
+}
+.curve::before{
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 100% 50%;
+    width: 55%;
+    height: 100%;
+    background: var(--n-);
+    transform: translate(84.7%, 60%);
+}
+.curve::after{
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 100% 50%;
+    width: 55%;
+    height: 100%;
+    background: var(--bl-);
+    transform: translate(-4%, 40%);
+    z-index: -1;
+}
+.bubble::after{
+    content: '';
+    border-top-left-radius: 30% 100%;
+    border-top-right-radius: 30% 100%;
+    position: absolute;
+    bottom: 0;
+    height: 85%;
+    width: 100%;
+    background: var(--dark-);
+    z-index: -1;
+}
+
+/* *https://www.shapedivider.app/* */
+.wave{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+.wave .shape-fill{
+    fill: var(--dark-);
+}
+
+.spacer{
+    aspect-ratio: 960/300;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.layer1{
+    background-image: url(./layered-waves-haikei.svg);
+}
+.layer2{
+    background-image: url(./lay-wav.svg);
+}
+.flip{
+    transform: rotate(180deg);
+}
+
+/* * https://codepen.io/xaddict/pen/epddwr * */
+svg,
+svg circle {
+  fill: #d177ee;
+  transform: translate(0, -40%);
+  z-index: 1;
+}
+
+@keyframes from0to360 {
+  from{transform:rotate(0);}
+  to{transform:rotate(360deg);}
+}
+/* !! CX, CY en R zijn svg specifieke attributen */
+#Circle1 {
+  animation: from0to360 1s linear infinite;
+  cx: 150;
+  cy: 145;
+  r: 100;
+  transform-origin: 145px 150px;
+}
+
+@keyframes from360to0 {
+  from{transform:rotate(360deg);}
+  to{transform:rotate(0deg);}
+}
+
+#Circle2 {
+  animation: from360to0 2s linear infinite;
+  cx: 150;
+  cy: 155;
+  r: 100;
+  transform-origin: 155px 150px;
+}
+
+#Circle3 {
+  animation: from0to360 3s linear infinite;
+  cx: 145;
+  cy: 150;
+  r: 100;
+  transform-origin: 150px 145px;
+}
+
+#Circle4 {
+  animation: from360to0 2.5s linear infinite;
+  cx: 155;
+  cy: 150;
+  r: 100;
+  transform-origin: 150px 155px;
+}
